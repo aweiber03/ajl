@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questionário sobre a História da Internet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: purple;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .question {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+    }
+    .option {
+      margin: 5px 0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: green;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Questionário sobre a História da Internet</h1>
+    
+    <!-- Pergunta 1 -->
+    <p class="question">1. Quando foi criada a primeira mensagem de e-mail?</p>
+    <div class="options">
+      <div class="option">
+        <input type="radio" name="q1" value="a" id="q1a">
+        <label for="q1a">a) 1969</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="q1" value="b" id="q1b">
+        <label for="q1b">b) 1983</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="q1" value="c" id="q1c">
+        <label for="q1c">c) 1991</label>
+      </div>
+    </div>
+
+    <!-- Pergunta 2 -->
+    <p class="question">2. Qual foi o primeiro navegador web desenvolvido por Tim Berners-Lee?</p>
+    <div class="options">
+      <div class="option">
+        <input type="radio" name="q2" value="a" id="q2a">
+        <label for="q2a">a) Netscape Navigator</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="q2" value="b" id="q2b">
+        <label for="q2b">b) Mosaic</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="q2" value="c" id="q2c">
+        <label for="q2c">c) WorldWideWeb</label>
+      </div>
+    </div>
+
+    <!-- Pergunta 3 -->
+    <p class="question">3. Qual instituição foi a pioneira no desenvolvimento da ARPANET, precursora da internet?</p>
+    <div class="options">
+      <div class="option">
+        <input type="radio" name="q3" value="a" id="q3a">
+        <label for="q3a">a) Microsoft</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="q3" value="b" id="q3b">
+        <label for="q3b">b) IBM</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="q3" value="c" id="q3c">
+        <label for="q3c">c) DARPA</label>
+      </div>
+    </div>
+
+    <button onclick="submitAnswers()">Enviar Respostas</button>
+  </div>
+
+  <script>
+    function submitAnswers() {
+      const q1 = document.querySelector('input[name="q1"]:checked').value;
+      const q2 = document.querySelector('input[name="q2"]:checked').value;
+      const q3 = document.querySelector('input[name="q3"]:checked').value;
+
+      const correctAnswers = ["a", "c", "c"];
+      const userAnswers = [q1, q2, q3];
+      let score = 0;
+
+      for (let i = 0; i < correctAnswers.length; i++) {
+        if (userAnswers[i] === correctAnswers[i]) {
+          score++;
+        }
+      }
+
+      alert("Você acertou " + score + " de 3 perguntas.");
+    }
+  </script>
+</body>
+</html>
